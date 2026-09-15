@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🌿 StudentCare
+# StudentCare
 
 **A simple, welcoming space for student counselling.**
 
