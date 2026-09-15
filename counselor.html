@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Set the page metadata and shared presentation assets. -->
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#234f42">
+<title>Counselor workspace · StudentCare</title><link rel="stylesheet" href="css/style.css?v=2"><script src="js/ui.js?v=2" defer></script><script src="js/script.js" defer></script></head><body class="app-page counselor-page"><a class="skip-link" href="#main">Skip to content</a>
+    <!-- Provide consistent navigation to each working dashboard section. -->
+    <aside class="sidebar"><a class="brand" href="index.html" aria-label="StudentCare home"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 4c-8-1-14 2-14 8a6 6 0 0 0 6 6c6 0 9-6 8-14ZM5 20l9-9"/></svg></span><span>Student<span class="brand-light">Care</span><small>ROOM TO GROW</small></span></a><div class="workspace-label">Counselor workspace</div><nav class="side-nav" aria-label="Counselor navigation"><a href="#overview" class="is-active" aria-current="location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/></svg><span>Overview</span></a><a href="#appointments" ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5h14a1 1 0 0 1 1 1v14H4V6a1 1 0 0 1 1-1ZM8 3v4m8-4v4M4 10h16m-12 4h2m4 0h2m-8 3h2"/></svg><span>Appointments</span></a><a href="#messages" ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 0 1-8 8H4l1-4a8 8 0 1 1 15-4ZM8 10h8m-8 4h5"/></svg><span>Messages</span></a></nav><div class="sidebar-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 4c-8-1-14 2-14 8a6 6 0 0 0 6 6c6 0 9-6 8-14ZM5 20l9-9"/></svg><strong>A little space.<br>A little perspective.</strong><p>Take your next step<br>at your own pace.</p></div><a class="sidebar-logout" href="php/logout.php"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v16h5m5-13 5 5-5 5m-5-5h10"/></svg> Log out</a></aside>
+    <div class="app-workspace"><header class="app-topbar"><span class="breadcrumb">Workspace <span>/</span> <strong>Counselor</strong></span><div class="topbar-meta"><span class="today-label" data-today></span><span class="role-avatar" aria-hidden="true">C</span><span >Counselor</span><a class="mobile-logout" href="php/logout.php" aria-label="Log out"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v16h5m5-13 5 5-5 5m-5-5h10"/></svg></a></div></header>
+    <main class="dashboard-content" id="main"><section class="dashboard-title" id="overview"><div><p class="eyebrow">YOUR COUNSELING WORKSPACE</p><h1>Good support starts here.</h1><p>A clear view of your requests and student conversations.</p></div></section><section class="stats" aria-label="Workspace summary"><div class="stat-card"><div class="stat-label"><h3>Total requests</h3><span class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5h14a1 1 0 0 1 1 1v14H4V6a1 1 0 0 1 1-1ZM8 3v4m8-4v4M4 10h16m-12 4h2m4 0h2m-8 3h2"/></svg></span></div><p id="request-count" class="stat-value">0</p><span class="stat-note">All assigned appointments</span></div><div class="stat-card"><div class="stat-label"><h3>Awaiting review</h3><span class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 8v5l3 2m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg></span></div><p id="pending-count" class="stat-value">0</p><span class="stat-note">Requests that need a decision</span></div><div class="stat-card"><div class="stat-label"><h3>Approved</h3><span class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg></span></div><p id="approved-count" class="stat-value">0</p><span class="stat-note">Sessions ready to go</span></div></section><section class="card table-card" id="appointments"><div class="card-heading"><div><h2>Appointment requests</h2><p>Review requests, manage sessions, and mark completed conversations.</p></div></div><div class="table-container" role="region" aria-label="Appointment requests" tabindex="0"><table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th scope="col">
+                                    Student
+                                </th>
+
+                                <th scope="col">
+                                    Date
+                                </th>
+
+                                <th scope="col">
+                                    Time
+                                </th>
+
+                                <th scope="col">
+                                    Reason
+                                </th>
+
+                                <th scope="col">
+                                    Status
+                                </th>
+
+                                <th scope="col">
+                                    Action
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="counselor-appointment-body">
+
+                            <tr>
+
+                                <td colspan="6">
+                                    Loading requests...
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table></div></section><section class="card " id="messages"><div class="card-heading"><div><h2>Keep the conversation going</h2><p>Read and reply to students connected with you.</p></div></div><div class="message-layout"><div class="message-compose"><div class="form-group"><label for="message-counselor">Student</label><select id="message-counselor"><option value="">Select a student</option></select></div><div class="form-group"><label for="message-text">Your message</label><textarea id="message-text" rows="4" maxlength="10000" placeholder="What would you like to share?"></textarea></div><div class="button-row"><button class="btn" type="button" onclick="sendMessage()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 0 1-8 8H4l1-4a8 8 0 1 1 15-4ZM8 10h8m-8 4h5"/></svg> Send reply</button><button id="refresh-messages" class="btn btn-outline" type="button">Refresh</button></div></div><div class="conversation"><div class="conversation-heading"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 0 1-8 8H4l1-4a8 8 0 1 1 15-4ZM8 10h8m-8 4h5"/></svg> Conversation</div><div id="message-list" class="message-list" aria-live="polite"><p>Select a student to view your conversation.</p></div></div></div></section><footer class="app-footer"><span>StudentCare</span><span>Your space to move forward.</span></footer></main></div></body></html>

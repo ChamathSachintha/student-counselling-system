@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Set the page metadata and shared presentation assets. -->
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#234f42">
+<title>Admin workspace · StudentCare</title><link rel="stylesheet" href="css/style.css?v=2"><script src="js/ui.js?v=2" defer></script></head><body class="app-page admin-page"><a class="skip-link" href="#main">Skip to content</a>
+    <!-- Provide consistent navigation to each working dashboard section. -->
+    <aside class="sidebar"><a class="brand" href="index.html" aria-label="StudentCare home"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 4c-8-1-14 2-14 8a6 6 0 0 0 6 6c6 0 9-6 8-14ZM5 20l9-9"/></svg></span><span>Student<span class="brand-light">Care</span><small>ROOM TO GROW</small></span></a><div class="workspace-label">Admin workspace</div><nav class="side-nav" aria-label="Admin navigation"><a href="#overview" class="is-active" aria-current="location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/></svg><span>Overview</span></a><a href="#users" ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2m14-18a4 4 0 0 1 0 8m6 10v-2a4 4 0 0 0-3-3.9M13 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z"/></svg><span>Community</span></a><a href="#appointments" ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5h14a1 1 0 0 1 1 1v14H4V6a1 1 0 0 1 1-1ZM8 3v4m8-4v4M4 10h16m-12 4h2m4 0h2m-8 3h2"/></svg><span>Appointments</span></a><a href="#past-events" ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>Completed sessions</span></a><a href="#counselors" ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 4c-8-1-14 2-14 8a6 6 0 0 0 6 6c6 0 9-6 8-14ZM5 20l9-9"/></svg><span>Counselors</span></a></nav><div class="sidebar-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 4c-8-1-14 2-14 8a6 6 0 0 0 6 6c6 0 9-6 8-14ZM5 20l9-9"/></svg><strong>A little space.<br>A little perspective.</strong><p>Take your next step<br>at your own pace.</p></div><a class="sidebar-logout" href="php/logout.php"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v16h5m5-13 5 5-5 5m-5-5h10"/></svg> Log out</a></aside>
+    <div class="app-workspace"><header class="app-topbar"><span class="breadcrumb">Workspace <span>/</span> <strong>Admin</strong></span><div class="topbar-meta"><span class="today-label" data-today></span><span class="role-avatar" aria-hidden="true">A</span><span id="admin-name">Admin</span><a class="mobile-logout" href="php/logout.php" aria-label="Log out"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v16h5m5-13 5 5-5 5m-5-5h10"/></svg></a></div></header>
+    <main class="dashboard-content" id="main"><section class="dashboard-title" id="overview"><div><p class="eyebrow">ADMINISTRATION</p><h1>Everything in perspective.</h1><p>Manage your counselling community from one workspace.</p></div><a class="btn" href="#add-user"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg> Add a user</a></section><section class="stats" aria-label="Workspace summary"><div class="stat-card"><div class="stat-label"><h3>Students</h3><span class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2m14-18a4 4 0 0 1 0 8m6 10v-2a4 4 0 0 0-3-3.9M13 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z"/></svg></span></div><p id="total-students" class="stat-value">0</p><span class="stat-note">Registered student accounts</span></div><div class="stat-card"><div class="stat-label"><h3>Counselors</h3><span class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 4c-8-1-14 2-14 8a6 6 0 0 0 6 6c6 0 9-6 8-14ZM5 20l9-9"/></svg></span></div><p id="total-counselors" class="stat-value">0</p><span class="stat-note">Your support team</span></div><div class="stat-card"><div class="stat-label"><h3>Appointments</h3><span class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5h14a1 1 0 0 1 1 1v14H4V6a1 1 0 0 1 1-1ZM8 3v4m8-4v4M4 10h16m-12 4h2m4 0h2m-8 3h2"/></svg></span></div><p id="total-appointments" class="stat-value">0</p><span class="stat-note">Across all sessions</span></div><div class="stat-card"><div class="stat-label"><h3>Pending</h3><span class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 8v5l3 2m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg></span></div><p id="pending-appointments" class="stat-value">0</p><span class="stat-note">Awaiting review</span></div></section><div class="admin-user-grid"><section class="card table-card" id="users"><div class="card-heading"><div><h2>Your community</h2><p>Manage student, counselor, and administrator accounts.</p></div></div><div class="table-container" role="region" aria-label="Your community" tabindex="0"><table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th scope="col">ID</th>
+
+                            <th scope="col">Name</th>
+
+                            <th scope="col">Email</th>
+
+                            <th scope="col">Role</th>
+
+                            <th scope="col">Actions</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="users-body">
+
+                        <tr>
+
+                            <td colspan="5">
+                                Loading users...
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table></div></section><section class="card add-user-card" id="add-user"><div class="card-heading"><div><h2 id="formTitle">Add a user</h2><p>Create an account and assign a role.</p></div></div><form id="userForm">
+
+                <div class="form-group">
+
+                    <label for="userName">
+                        Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="userName"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="userEmail">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="userEmail"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="userPassword">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="userPassword"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="userRole">
+                        Role
+                    </label>
+
+                    <select id="userRole" required>
+
+                        <option value="">
+                            Select Role
+                        </option>
+
+                        <option value="student">
+                            Student
+                        </option>
+
+                        <option value="counselor">
+                            Counselor
+                        </option>
+
+                        <option value="admin">
+                            Admin
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Student-only information -->
+
+                <div id="studentDetails" style="display:none;">
+
+                    <div class="form-group">
+
+                        <label for="studentNumber">
+                            Student Number
+                        </label>
+
+                        <input
+                            type="text"
+                            id="studentNumber"
+                            placeholder="S/2026/123"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="course">
+                            Course
+                        </label>
+
+                        <input
+                            type="text"
+                            id="course"
+                            placeholder="Course name"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="year">
+                            Year
+                        </label>
+
+                        <input
+                            type="number"
+                            id="year"
+                            min="1"
+                            max="6"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="phone">
+                            Phone
+                        </label>
+
+                        <input
+                            type="text"
+                            id="phone"
+                            placeholder="Phone number"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn"
+                >
+                    Add User
+                </button>
+
+            </form></section></div><section class="card table-card" id="appointments"><div class="card-heading"><div><h2>Appointment management</h2><p>Review sessions and update their status.</p></div></div><div class="table-container" role="region" aria-label="Appointment management" tabindex="0"><table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th scope="col">ID</th>
+
+                            <th scope="col">Student</th>
+
+                            <th scope="col">Registration No.</th>
+
+                            <th scope="col">Counselor</th>
+
+                            <th scope="col">Date</th>
+
+                            <th scope="col">Time</th>
+
+                            <th scope="col">Reason</th>
+
+                            <th scope="col">Status</th>
+
+                            <th scope="col">Action</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="appointments-body">
+
+                        <tr>
+
+                            <td colspan="9">
+                                Loading appointments...
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table></div></section><section class="card table-card" id="past-events"><div class="card-heading"><div><h2>Completed sessions</h2><p>A record of past counselling appointments.</p></div></div><div class="table-container" role="region" aria-label="Completed sessions" tabindex="0"><table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th scope="col">ID</th>
+
+                            <th scope="col">Student</th>
+
+                            <th scope="col">Registration No.</th>
+
+                            <th scope="col">Counselor</th>
+
+                            <th scope="col">Date</th>
+
+                            <th scope="col">Time</th>
+
+                            <th scope="col">Reason</th>
+
+                            <th scope="col">Status</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="past-events-body">
+
+                        <tr>
+
+                            <td colspan="8">
+                                Loading past events...
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table></div></section><section class="card table-card" id="counselors"><div class="card-heading"><div><h2>Counselor directory</h2><p>The people supporting your students.</p></div></div><div class="table-container" role="region" aria-label="Counselor directory" tabindex="0"><table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th scope="col">ID</th>
+
+                            <th scope="col">Name</th>
+
+                            <th scope="col">Email</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="counselors-body">
+
+                        <tr>
+
+                            <td colspan="3">
+                                Loading counselors...
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table></div></section><footer class="app-footer"><span>StudentCare</span><span>Your space to move forward.</span></footer></main></div><script>
+
+let currentAdminId = null;
+
+
+/* ESCAPE HTML */
+
+function escapeHtml(value) {
+
+    if (value === null || value === undefined) {
+        return "";
+    }
+
+    return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+
+/* STATUS CLASS */
+
+function getStatusClass(status) {
+
+    status = String(status || "").toLowerCase();
+
+    if (status === "pending") {
+        return "status-pending";
+    }
+
+    if (status === "approved") {
+        return "status-approved";
+    }
+
+    if (status === "rejected") {
+        return "status-rejected";
+    }
+
+    if (status === "cancelled") return "status-cancelled";
+
+    if (status === "completed") {
+        return "status-completed";
+    }
+
+    return "";
+}
+
+
+/* CHECK ADMIN */
+
+async function checkAdmin() {
+
+    try {
+
+        const response = await fetch(
+            "php/admin_action.php?action=check"
+        );
+
+        const data = await response.json();
+
+        if (!data.success) {
+
+            window.location.href = "login.html";
+
+            return false;
+        }
+
+
+        const admin = data.data || data;
+
+
+        if (admin.role !== "admin") {
+
+            alert("Access denied. Admin account required.");
+
+            window.location.href = "login.html";
+
+            return false;
+        }
+
+
+        currentAdminId = admin.user_id || null;
+
+
+        if (admin.name) {
+
+            document.getElementById("admin-name").textContent =
+                admin.name;
+
+        }
+
+
+        return true;
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert("Unable to verify admin session.");
+
+        window.location.href = "login.html";
+
+        return false;
+    }
+}
+
+
+
+/* LOAD DASHBOARD */
+
+async function loadDashboard() {
+
+    try {
+
+        const response = await fetch(
+            "php/admin_action.php?action=dashboard"
+        );
+
+        const data = await response.json();
+
+
+        if (!data.success) {
+
+            console.error(data.message);
+
+            return;
+        }
+
+
+        const dashboard = data.data || data;
+
+
+        document.getElementById("total-students").textContent =
+            dashboard.total_students || 0;
+
+
+        document.getElementById("total-counselors").textContent =
+            dashboard.total_counselors || 0;
+
+
+        document.getElementById("total-appointments").textContent =
+            dashboard.total_appointments || 0;
+
+
+        document.getElementById("pending-appointments").textContent =
+            dashboard.pending_appointments || 0;
+
+
+    } catch (error) {
+
+        console.error(
+            "Dashboard error:",
+            error
+        );
+
+    }
+
+}
+
+
+
+/* LOAD USERS */
+
+async function loadUsers() {
+
+    const tbody =
+        document.getElementById("users-body");
+
+
+    try {
+
+        const response = await fetch(
+            "php/admin_action.php?action=users"
+        );
+
+        const data = await response.json();
+
+
+        if (!data.success) {
+
+            tbody.innerHTML = `
+                <tr>
+                    <td colspan="5">
+                        ${escapeHtml(data.message)}
+                    </td>
+                </tr>
+            `;
+
+            return;
+        }
+
+
+        const result = data.data || data;
+
+        const users = result.users || [];
+
+
+        if (users.length === 0) {
+
+            tbody.innerHTML = `
+                <tr>
+                    <td colspan="5">
+                        No users found.
+                    </td>
+                </tr>
+            `;
+
+            return;
+        }
+
+
+        tbody.innerHTML = users.map(user => {
+
+            return `
+
+                <tr>
+
+                    <td>
+                        ${escapeHtml(user.user_id)}
+                    </td>
+
+                    <td>
+                        ${escapeHtml(user.name)}
+                    </td>
+
+                    <td>
+                        ${escapeHtml(user.email)}
+                    </td>
+
+                    <td>
+                        ${escapeHtml(user.role)}
+                    </td>
+
+                    <td>
+
+                        <button
+                            class="btn btn-small"
+                            onclick="changePassword(${user.user_id})"
+                        >
+                            Change Password
+                        </button>
+
+                        <button
+                            class="btn btn-danger btn-small"
+                            onclick="deleteUser(${user.user_id})"
+                        >
+                            Delete
+                        </button>
+
+                    </td>
+
+                </tr>
+
+            `;
+
+        }).join("");
+
+
+    } catch (error) {
+
+        console.error(error);
+
+        tbody.innerHTML = `
+            <tr>
+                <td colspan="5">
+                    Unable to load users.
+                </td>
+            </tr>
+        `;
+    }
+
+}
+
+
+
+/* CHANGE PASSWORD */
+
+async function changePassword(userId) {
+
+    const newPassword =
+        prompt("Enter the new password:");
+
+    if (!newPassword) {
+        return;
+    }
+
+
+    if (newPassword.length < 4) {
+
+        alert(
+            "Password must contain at least 4 characters."
+        );
+
+        return;
+    }
+
+
+    try {
+
+        const response = await fetch(
+            "php/admin_action.php?action=change_password",
+            {
+                method: "POST",
+
+                headers: {
+                    "Content-Type":
+                        "application/x-www-form-urlencoded"
+                },
+
+                body:
+                    "user_id=" +
+                    encodeURIComponent(userId) +
+                    "&new_password=" +
+                    encodeURIComponent(newPassword)
+            }
+        );
+
+
+        const data = await response.json();
+
+
+        if (data.success) {
+
+            alert(
+                "Password changed successfully."
+            );
+
+        } else {
+
+            alert(
+                data.message || "Unable to change password."
+            );
+
+        }
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert(
+            "An error occurred while changing the password."
+        );
+    }
+
+}
+
+
+
+/* DELETE USER */
+
+async function deleteUser(userId) {
+
+    if (Number(userId) === Number(currentAdminId)) {
+
+        alert(
+            "You cannot delete your own admin account."
+        );
+
+        return;
+    }
+
+
+    const confirmed =
+        confirm(
+            "Are you sure you want to delete this user?"
+        );
+
+
+    if (!confirmed) {
+        return;
+    }
+
+
+    try {
+
+        const response = await fetch(
+            "php/admin_action.php?action=delete_user",
+            {
+                method: "POST",
+
+                headers: {
+                    "Content-Type":
+                        "application/x-www-form-urlencoded"
+                },
+
+                body:
+                    "user_id=" +
+                    encodeURIComponent(userId)
+            }
+        );
+
+
+        const data = await response.json();
+
+
+        if (data.success) {
+
+            alert("User deleted successfully.");
+
+            loadUsers();
+            loadDashboard();
+
+        } else {
+
+            alert(
+                data.message || "Unable to delete user."
+            );
+
+        }
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert(
+            "An error occurred while deleting the user."
+        );
+    }
+
+}
+
+
+
+/* SHOW / HIDE STUDENT DETAILS */
+
+document
+    .getElementById("userRole")
+    .addEventListener("change", function () {
+
+        const studentDetails =
+            document.getElementById("studentDetails");
+
+
+        if (this.value === "student") {
+
+            studentDetails.style.display = "block";
+
+        } else {
+
+            studentDetails.style.display = "none";
+
+        }
+
+    });
+
+
+
+/* ADD USER */
+
+document
+    .getElementById("userForm")
+    .addEventListener("submit", async function (event) {
+
+        event.preventDefault();
+
+
+        const name =
+            document.getElementById("userName").value.trim();
+
+
+        const email =
+            document.getElementById("userEmail").value.trim();
+
+
+        const password =
+            document.getElementById("userPassword").value;
+
+
+        const role =
+            document.getElementById("userRole").value;
+
+
+        const studentNumber =
+            document.getElementById("studentNumber").value.trim();
+
+
+        const course =
+            document.getElementById("course").value.trim();
+
+
+        const year =
+            document.getElementById("year").value;
+
+
+        const phone =
+            document.getElementById("phone").value.trim();
+
+
+        if (!name || !email || !password || !role) {
+
+            alert(
+                "Please fill in all required fields."
+            );
+
+            return;
+        }
+
+
+        try {
+
+            const body = new URLSearchParams();
+
+            body.append("name", name);
+            body.append("email", email);
+            body.append("password", password);
+            body.append("role", role);
+
+            if (role === "student") {
+
+                body.append(
+                    "student_number",
+                    studentNumber
+                );
+
+                body.append(
+                    "course",
+                    course
+                );
+
+                body.append(
+                    "year",
+                    year
+                );
+
+                body.append(
+                    "phone",
+                    phone
+                );
+            }
+
+
+            const response = await fetch(
+                "php/admin_action.php?action=add_user",
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type":
+                            "application/x-www-form-urlencoded"
+                    },
+
+                    body: body.toString()
+                }
+            );
+
+
+            const data = await response.json();
+
+
+            if (data.success) {
+
+                alert(
+                    "User added successfully."
+                );
+
+
+                document
+                    .getElementById("userForm")
+                    .reset();
+
+
+                document
+                    .getElementById("studentDetails")
+                    .style.display = "none";
+
+
+                loadUsers();
+                loadDashboard();
+
+            } else {
+
+                alert(
+                    data.message || "Unable to add user."
+                );
+
+            }
+
+
+        } catch (error) {
+
+            console.error(error);
+
+            alert(
+                "An error occurred while adding the user."
+            );
+        }
+
+    });
+
+
+
+/* LOAD APPOINTMENTS */
+
+async function loadAppointments() {
+
+    const tbody =
+        document.getElementById("appointments-body");
+
+
+    try {
+
+        const response = await fetch(
+            "php/admin_action.php?action=appointments"
+        );
+
+
+        const data = await response.json();
+
+
+        if (!data.success) {
+
+            tbody.innerHTML = `
+                <tr>
+                    <td colspan="9">
+                        ${escapeHtml(data.message)}
+                    </td>
+                </tr>
+            `;
+
+            return;
+        }
+
+
+        const result = data.data || data;
+
+        const appointments =
+            result.appointments || [];
+
+
+        if (appointments.length === 0) {
+
+            tbody.innerHTML = `
+                <tr>
+                    <td colspan="9">
+                        No appointments found.
+                    </td>
+                </tr>
+            `;
+
+            renderPastEvents([]);
+
+            return;
+        }
+
+
+        tbody.innerHTML =
+            appointments.map(appointment => {
+
+                const status =
+                    appointment.status || "";
+
+
+                return `
+
+                    <tr>
+
+                        <td>
+                            ${escapeHtml(
+                                appointment.appointment_id
+                            )}
+                        </td>
+
+                        <td>
+                            ${escapeHtml(
+                                appointment.student_name
+                            )}
+                        </td>
+
+                        <td>
+                            ${escapeHtml(
+                                appointment.student_number
+                            )}
+                        </td>
+
+                        <td>
+                            ${escapeHtml(
+                                appointment.counselor_name
+                            )}
+                        </td>
+
+                        <td>
+                            ${escapeHtml(
+                                appointment.date ||
+                                appointment.appointment_date
+                            )}
+                        </td>
+
+                        <td>
+                            ${escapeHtml(
+                                appointment.time ||
+                                appointment.appointment_time
+                            )}
+                        </td>
+
+                        <td>
+                            ${escapeHtml(
+                                appointment.reason
+                            )}
+                        </td>
+
+                        <td>
+
+                            <span class="${getStatusClass(status)}">
+
+                                ${escapeHtml(status)}
+
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            <select
+                                onchange="
+                                    updateAppointmentStatus(
+                                        ${appointment.appointment_id},
+                                        this.value
+                                    )
+                                "
+                            >
+
+                                <option value="Pending"
+                                    ${status === "Pending" ? "selected" : ""}>
+                                    Pending
+                                </option>
+
+                                <option value="Approved"
+                                    ${status === "Approved" ? "selected" : ""}>
+                                    Approved
+                                </option>
+
+                                <option value="Rejected"
+                                    ${status === "Rejected" ? "selected" : ""}>
+                                    Rejected
+                                </option>
+
+                                <option value="Cancelled"
+                                    ${status === "Cancelled" ? "selected" : ""}>
+                                    Cancelled
+                                </option>
+                                <option value="Completed"
+                                    ${status === "Completed" ? "selected" : ""}>
+                                    Completed
+                                </option>
+
+                            </select>
+
+                        </td>
+
+                    </tr>
+
+                `;
+
+            }).join("");
+
+
+        /* Show completed appointments in the Past Events section. */
+
+        renderPastEvents(appointments);
+
+
+    } catch (error) {
+
+        console.error(error);
+
+        tbody.innerHTML = `
+            <tr>
+                <td colspan="9">
+                    Unable to load appointments.
+                </td>
+            </tr>
+        `;
+
+    }
+
+}
+
+
+
+/* PAST EVENTS */
+
+function renderPastEvents(appointments) {
+
+    const tbody =
+        document.getElementById("past-events-body");
+
+
+    /* Only completed appointments are considered past counselling events. */
+
+    const pastEvents =
+        appointments.filter(
+            appointment =>
+                String(
+                    appointment.status || ""
+                ).toLowerCase() === "completed"
+        );
+
+
+    if (pastEvents.length === 0) {
+
+        tbody.innerHTML = `
+            <tr>
+                <td colspan="8">
+                    No past events found.
+                </td>
+            </tr>
+        `;
+
+        return;
+    }
+
+
+    tbody.innerHTML =
+        pastEvents.map(appointment => {
+
+            const date =
+                appointment.date ||
+                appointment.appointment_date ||
+                "";
+
+
+            const time =
+                appointment.time ||
+                appointment.appointment_time ||
+                "";
+
+
+            return `
+
+                <tr>
+
+                    <td>
+                        ${escapeHtml(
+                            appointment.appointment_id
+                        )}
+                    </td>
+
+                    <td>
+                        ${escapeHtml(
+                            appointment.student_name
+                        )}
+                    </td>
+
+                    <td>
+                        ${escapeHtml(
+                            appointment.student_number
+                        )}
+                    </td>
+
+                    <td>
+                        ${escapeHtml(
+                            appointment.counselor_name
+                        )}
+                    </td>
+
+                    <td>
+                        ${escapeHtml(date)}
+                    </td>
+
+                    <td>
+                        ${escapeHtml(time)}
+                    </td>
+
+                    <td>
+                        ${escapeHtml(
+                            appointment.reason
+                        )}
+                    </td>
+
+                    <td>
+
+                        <span class="status-completed">
+                            Completed
+                        </span>
+
+                    </td>
+
+                </tr>
+
+            `;
+
+        }).join("");
+
+}
+
+
+
+/* UPDATE APPOINTMENT STATUS */
+
+async function updateAppointmentStatus(
+    appointmentId,
+    status
+) {
+
+    try {
+
+        const response = await fetch(
+            "php/admin_action.php?action=update_appointment",
+            {
+                method: "POST",
+
+                headers: {
+                    "Content-Type":
+                        "application/x-www-form-urlencoded"
+                },
+
+                body:
+                    "appointment_id=" +
+                    encodeURIComponent(appointmentId) +
+
+                    "&status=" +
+                    encodeURIComponent(status)
+            }
+        );
+
+
+        const data = await response.json();
+
+
+        if (data.success) {
+
+            loadAppointments();
+            loadDashboard();
+
+        } else {
+
+            alert(
+                data.message ||
+                "Unable to update appointment."
+            );
+
+        }
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert(
+            "An error occurred while updating the appointment."
+        );
+
+    }
+
+}
+
+
+
+/* LOAD COUNSELORS */
+
+async function loadCounselors() {
+
+    const tbody =
+        document.getElementById("counselors-body");
+
+
+    try {
+
+        const response = await fetch(
+            "php/admin_action.php?action=counselors"
+        );
+
+
+        const data = await response.json();
+
+
+        if (!data.success) {
+
+            tbody.innerHTML = `
+                <tr>
+                    <td colspan="3">
+                        ${escapeHtml(data.message)}
+                    </td>
+                </tr>
+            `;
+
+            return;
+        }
+
+
+        const result = data.data || data;
+
+        const counselors =
+            result.counselors || [];
+
+
+        if (counselors.length === 0) {
+
+            tbody.innerHTML = `
+                <tr>
+                    <td colspan="3">
+                        No counselors found.
+                    </td>
+                </tr>
+            `;
+
+            return;
+        }
+
+
+        tbody.innerHTML =
+            counselors.map(counselor => {
+
+                return `
+
+                    <tr>
+
+                        <td>
+                            ${escapeHtml(
+                                counselor.user_id
+                            )}
+                        </td>
+
+                        <td>
+                            ${escapeHtml(
+                                counselor.name
+                            )}
+                        </td>
+
+                        <td>
+                            ${escapeHtml(
+                                counselor.email
+                            )}
+                        </td>
+
+                    </tr>
+
+                `;
+
+            }).join("");
+
+
+    } catch (error) {
+
+        console.error(error);
+
+        tbody.innerHTML = `
+            <tr>
+                <td colspan="3">
+                    Unable to load counselors.
+                </td>
+            </tr>
+        `;
+
+    }
+
+}
+
+
+
+/* INITIALIZE ADMIN DASHBOARD */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    async function () {
+
+        const isAdmin =
+            await checkAdmin();
+
+
+        if (!isAdmin) {
+            return;
+        }
+
+
+        await loadDashboard();
+
+        await loadUsers();
+
+        await loadAppointments();
+
+        await loadCounselors();
+
+    }
+);
+
+</script></body></html>

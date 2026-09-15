@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Set the page metadata and shared presentation assets. -->
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#234f42">
+<title>Welcome back · StudentCare</title><link rel="stylesheet" href="css/style.css?v=2"><script src="js/ui.js?v=2" defer></script><script src="js/script.js" defer></script></head><body class="auth-page"><a class="skip-link" href="#main">Skip to content</a>
+    <aside class="auth-story"><a class="brand" href="index.html" aria-label="StudentCare home"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 4c-8-1-14 2-14 8a6 6 0 0 0 6 6c6 0 9-6 8-14ZM5 20l9-9"/></svg></span><span>Student<span class="brand-light">Care</span><small>ROOM TO GROW</small></span></a><div class="auth-story-copy"><p class="eyebrow">A SPACE FOR YOU</p><h2>Your next chapter<br>starts with <em>you.</em></h2><p>A place to pause, talk things through, and find a little more clarity.</p></div><div class="quiet-art" aria-hidden="true"><div class="art-sun"></div><div class="art-arch"><div class="art-horizon"></div><div class="art-path"></div></div><div class="art-leaf leaf-one"></div><div class="art-leaf leaf-two"></div><div class="art-leaf leaf-three"></div><div class="art-caption"><span class="mini-dot"></span> A little room to grow.</div></div><p class="story-footer">Student counselling, made a little simpler.</p></aside>
+    <main id="main" class="auth-main"><div class="auth-topline"><a class="back-link" href="index.html">← Back to home</a><span>NEW TO STUDENTCARE? <a href="register.html">Join us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></span></div>
+    <section class="auth-card "><p class="eyebrow">YOUR STUDENTCARE ACCOUNT</p><h1>Welcome back.</h1><p class="subtitle">Log in to pick up where you left off.</p>
+    <!-- Keep the existing account fields and submit them to the PHP handler. -->
+    <form action="php/login.php" method="POST">
+            <div class="form-group">
+                <label for="email">
+                    Email
+                </label>
+                <input
+                    type="email"
+                    id="email" autocomplete="email"
+                    name="email"
+                    placeholder="Enter email"
+                    required
+                >
+            </div>
+            <div class="form-group">
+                <label for="password">
+                    Password
+                </label>
+                <input
+                    type="password"
+                    id="password" autocomplete="current-password"
+                    name="password"
+                    placeholder="Enter password"
+                    required
+                >
+            </div>
+            <!-- System message is shown above the button. -->
+            <div id="login-error" class="alert"></div>
+            <button class="btn" type="submit">
+                Login
+            </button>
+        </form><p class="auth-link">Don’t have an account? <a href="register.html">Create an account</a></p><details class="demo-accounts"><summary>Try a demo account</summary><div class="demo-account"><strong>Student</strong><span>user@gmail.com</span><code>user</code></div><div class="demo-account"><strong>Counselor</strong><span>sarah@gmail.com</span><code>sarah</code></div><div class="demo-account"><strong>Admin</strong><span>admin@gmail.com</span><code>admin</code></div><p>Email address and password are shown for each demo account.</p></details></section><p class="auth-bottom">A little support. A clearer path.</p></main></body></html>
